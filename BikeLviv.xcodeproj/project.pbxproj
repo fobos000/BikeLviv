@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F18D5F71A2A2E8900025DE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F18D5F61A2A2E8900025DE0 /* main.m */; };
+		7F18D5FA1A2A2E8900025DE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F18D5F91A2A2E8900025DE0 /* AppDelegate.m */; };
+		7F18D5FD1A2A2E8900025DE0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F18D5FC1A2A2E8900025DE0 /* FirstViewController.m */; };
+		7F18D6001A2A2E8900025DE0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F18D5FF1A2A2E8900025DE0 /* SecondViewController.m */; };
+		7F18D6031A2A2E8900025DE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F18D6011A2A2E8900025DE0 /* Main.storyboard */; };
+		7F18D6051A2A2E8900025DE0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F18D6041A2A2E8900025DE0 /* Images.xcassets */; };
+		7F18D6081A2A2E8900025DE0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F18D6061A2A2E8900025DE0 /* LaunchScreen.xib */; };
+		7F18D6141A2A2E8900025DE0 /* BikeLvivTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F18D6131A2A2E8900025DE0 /* BikeLvivTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7F18D60E1A2A2E8900025DE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F18D5E91A2A2E8900025DE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F18D5F01A2A2E8900025DE0;
+			remoteInfo = BikeLviv;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7F18D5F11A2A2E8900025DE0 /* BikeLviv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeLviv.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F18D5F51A2A2E8900025DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F18D5F61A2A2E8900025DE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7F18D5F81A2A2E8900025DE0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7F18D5F91A2A2E8900025DE0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7F18D5FB1A2A2E8900025DE0 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		7F18D5FC1A2A2E8900025DE0 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		7F18D5FE1A2A2E8900025DE0 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		7F18D5FF1A2A2E8900025DE0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		7F18D6021A2A2E8900025DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F18D6041A2A2E8900025DE0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7F18D6071A2A2E8900025DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7F18D60D1A2A2E8900025DE0 /* BikeLvivTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeLvivTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F18D6121A2A2E8900025DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F18D6131A2A2E8900025DE0 /* BikeLvivTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BikeLvivTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F18D5EE1A2A2E8900025DE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F18D60A1A2A2E8900025DE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F18D5E81A2A2E8900025DE0 = {
+			isa = PBXGroup;
+			children = (
+				7F18D5F31A2A2E8900025DE0 /* BikeLviv */,
+				7F18D6101A2A2E8900025DE0 /* BikeLvivTests */,
+				7F18D5F21A2A2E8900025DE0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7F18D5F21A2A2E8900025DE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F18D5F11A2A2E8900025DE0 /* BikeLviv.app */,
+				7F18D60D1A2A2E8900025DE0 /* BikeLvivTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F18D5F31A2A2E8900025DE0 /* BikeLviv */ = {
+			isa = PBXGroup;
+			children = (
+				7F18D5F81A2A2E8900025DE0 /* AppDelegate.h */,
+				7F18D5F91A2A2E8900025DE0 /* AppDelegate.m */,
+				7F18D5FB1A2A2E8900025DE0 /* FirstViewController.h */,
+				7F18D5FC1A2A2E8900025DE0 /* FirstViewController.m */,
+				7F18D5FE1A2A2E8900025DE0 /* SecondViewController.h */,
+				7F18D5FF1A2A2E8900025DE0 /* SecondViewController.m */,
+				7F18D6011A2A2E8900025DE0 /* Main.storyboard */,
+				7F18D6041A2A2E8900025DE0 /* Images.xcassets */,
+				7F18D6061A2A2E8900025DE0 /* LaunchScreen.xib */,
+				7F18D5F41A2A2E8900025DE0 /* Supporting Files */,
+			);
+			path = BikeLviv;
+			sourceTree = "<group>";
+		};
+		7F18D5F41A2A2E8900025DE0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F18D5F51A2A2E8900025DE0 /* Info.plist */,
+				7F18D5F61A2A2E8900025DE0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7F18D6101A2A2E8900025DE0 /* BikeLvivTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F18D6131A2A2E8900025DE0 /* BikeLvivTests.m */,
+				7F18D6111A2A2E8900025DE0 /* Supporting Files */,
+			);
+			path = BikeLvivTests;
+			sourceTree = "<group>";
+		};
+		7F18D6111A2A2E8900025DE0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F18D6121A2A2E8900025DE0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F18D5F01A2A2E8900025DE0 /* BikeLviv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F18D6171A2A2E8900025DE0 /* Build configuration list for PBXNativeTarget "BikeLviv" */;
+			buildPhases = (
+				7F18D5ED1A2A2E8900025DE0 /* Sources */,
+				7F18D5EE1A2A2E8900025DE0 /* Frameworks */,
+				7F18D5EF1A2A2E8900025DE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikeLviv;
+			productName = BikeLviv;
+			productReference = 7F18D5F11A2A2E8900025DE0 /* BikeLviv.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7F18D60C1A2A2E8900025DE0 /* BikeLvivTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F18D61A1A2A2E8900025DE0 /* Build configuration list for PBXNativeTarget "BikeLvivTests" */;
+			buildPhases = (
+				7F18D6091A2A2E8900025DE0 /* Sources */,
+				7F18D60A1A2A2E8900025DE0 /* Frameworks */,
+				7F18D60B1A2A2E8900025DE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F18D60F1A2A2E8900025DE0 /* PBXTargetDependency */,
+			);
+			name = BikeLvivTests;
+			productName = BikeLvivTests;
+			productReference = 7F18D60D1A2A2E8900025DE0 /* BikeLvivTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F18D5E91A2A2E8900025DE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Ostap Horbach";
+				TargetAttributes = {
+					7F18D5F01A2A2E8900025DE0 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					7F18D60C1A2A2E8900025DE0 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 7F18D5F01A2A2E8900025DE0;
+					};
+				};
+			};
+			buildConfigurationList = 7F18D5EC1A2A2E8900025DE0 /* Build configuration list for PBXProject "BikeLviv" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F18D5E81A2A2E8900025DE0;
+			productRefGroup = 7F18D5F21A2A2E8900025DE0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F18D5F01A2A2E8900025DE0 /* BikeLviv */,
+				7F18D60C1A2A2E8900025DE0 /* BikeLvivTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F18D5EF1A2A2E8900025DE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F18D6031A2A2E8900025DE0 /* Main.storyboard in Resources */,
+				7F18D6081A2A2E8900025DE0 /* LaunchScreen.xib in Resources */,
+				7F18D6051A2A2E8900025DE0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F18D60B1A2A2E8900025DE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F18D5ED1A2A2E8900025DE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F18D6001A2A2E8900025DE0 /* SecondViewController.m in Sources */,
+				7F18D5FA1A2A2E8900025DE0 /* AppDelegate.m in Sources */,
+				7F18D5FD1A2A2E8900025DE0 /* FirstViewController.m in Sources */,
+				7F18D5F71A2A2E8900025DE0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F18D6091A2A2E8900025DE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F18D6141A2A2E8900025DE0 /* BikeLvivTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F18D60F1A2A2E8900025DE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F18D5F01A2A2E8900025DE0 /* BikeLviv */;
+			targetProxy = 7F18D60E1A2A2E8900025DE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7F18D6011A2A2E8900025DE0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F18D6021A2A2E8900025DE0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7F18D6061A2A2E8900025DE0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F18D6071A2A2E8900025DE0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7F18D6151A2A2E8900025DE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7F18D6161A2A2E8900025DE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F18D6181A2A2E8900025DE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BikeLviv/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7F18D6191A2A2E8900025DE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BikeLviv/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7F18D61B1A2A2E8900025DE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BikeLvivTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeLviv.app/BikeLviv";
+			};
+			name = Debug;
+		};
+		7F18D61C1A2A2E8900025DE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BikeLvivTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeLviv.app/BikeLviv";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F18D5EC1A2A2E8900025DE0 /* Build configuration list for PBXProject "BikeLviv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F18D6151A2A2E8900025DE0 /* Debug */,
+				7F18D6161A2A2E8900025DE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F18D6171A2A2E8900025DE0 /* Build configuration list for PBXNativeTarget "BikeLviv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F18D6181A2A2E8900025DE0 /* Debug */,
+				7F18D6191A2A2E8900025DE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7F18D61A1A2A2E8900025DE0 /* Build configuration list for PBXNativeTarget "BikeLvivTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F18D61B1A2A2E8900025DE0 /* Debug */,
+				7F18D61C1A2A2E8900025DE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F18D5E91A2A2E8900025DE0 /* Project object */;
+}

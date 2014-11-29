@@ -9,6 +9,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 #import "MapViewController.h"
+#import "APIClient.h"
 
 @interface MapViewController ()
 
@@ -20,7 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    [[APIClient sharedInstance] GETmodelWithName:@"routes" commpletionBlock:^(id responseObject, NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

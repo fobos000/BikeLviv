@@ -46,12 +46,26 @@
         self.lastUpdate = [NSDate date];
         
         if ([responseObject isKindOfClass:[NSArray class]]) {
+            
+            NSManagedObjectContext *context = [NSManagedObjectContext defaultContext];
+            
             NSMutableArray *places = [@[] mutableCopy];
             [responseObject enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 NSError *error = nil;
                 Place *place = [MTLJSONAdapter modelOfClass:[Place class] fromJSONDictionary:obj error:&error];
+                
+                [MTLManagedObjectAdapter managedObjectFromModel:place
+                                           insertingIntoContext:context
+                                                          error:&error];
+                
                 [places addObject:place];
             }];
+            
+            NSError *saveError;
+            if (![context save:&saveError]) {
+                NSLog(@"Unable to save context for %@", [Place managedObjectEntityName]);
+            }
+            
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);

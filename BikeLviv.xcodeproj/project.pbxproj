@@ -30,7 +30,10 @@
 		7F18D6361A2A325300025DE0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F18D6351A2A325300025DE0 /* QuartzCore.framework */; };
 		7F18D6381A2A326000025DE0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F18D6371A2A326000025DE0 /* SystemConfiguration.framework */; };
 		7F27DF731A2A3ECA007711DD /* DirectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F27DF721A2A3ECA007711DD /* DirectionService.m */; };
-		7FD89CCC1A2A59AC0065C6B1 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD89CCB1A2A59AC0065C6B1 /* APIClient.m */; };
+		7FCA4A6D1A2B27AB00898FE6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA4A6B1A2B27AB00898FE6 /* Model.xcdatamodeld */; };
+		7FCA4A701A2B326800898FE6 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA4A6F1A2B326800898FE6 /* APIClient.m */; };
+		7FCA4A731A2B873900898FE6 /* RemoteDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA4A721A2B873900898FE6 /* RemoteDataLoader.m */; };
+		7FCA4A791A2B942B00898FE6 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA4A781A2B942B00898FE6 /* Place.m */; };
 		B0F9F61FDC601CA1A8BFC74C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBE45E9CD1E2690D105D21F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -77,8 +80,13 @@
 		7F18D6371A2A326000025DE0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7F27DF711A2A3ECA007711DD /* DirectionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionService.h; sourceTree = "<group>"; };
 		7F27DF721A2A3ECA007711DD /* DirectionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionService.m; sourceTree = "<group>"; };
-		7FD89CCA1A2A59AC0065C6B1 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
-		7FD89CCB1A2A59AC0065C6B1 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		7FCA4A6C1A2B27AB00898FE6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		7FCA4A6E1A2B326800898FE6 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		7FCA4A6F1A2B326800898FE6 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		7FCA4A711A2B873900898FE6 /* RemoteDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteDataLoader.h; sourceTree = "<group>"; };
+		7FCA4A721A2B873900898FE6 /* RemoteDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteDataLoader.m; sourceTree = "<group>"; };
+		7FCA4A771A2B942B00898FE6 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		7FCA4A781A2B942B00898FE6 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		81A5806B0A5231DC51A9F2AB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CFBE45E9CD1E2690D105D21F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,6 +169,7 @@
 		7F18D5F31A2A2E8900025DE0 /* BikeLviv */ = {
 			isa = PBXGroup;
 			children = (
+				7FCA4A6A1A2B275A00898FE6 /* Model */,
 				7F18D5F81A2A2E8900025DE0 /* AppDelegate.h */,
 				7F18D5F91A2A2E8900025DE0 /* AppDelegate.m */,
 				7F18D5FB1A2A2E8900025DE0 /* MapViewController.h */,
@@ -173,8 +182,10 @@
 				7F18D6041A2A2E8900025DE0 /* Images.xcassets */,
 				7F18D6061A2A2E8900025DE0 /* LaunchScreen.xib */,
 				7F18D5F41A2A2E8900025DE0 /* Supporting Files */,
-				7FD89CCA1A2A59AC0065C6B1 /* APIClient.h */,
-				7FD89CCB1A2A59AC0065C6B1 /* APIClient.m */,
+				7FCA4A6E1A2B326800898FE6 /* APIClient.h */,
+				7FCA4A6F1A2B326800898FE6 /* APIClient.m */,
+				7FCA4A711A2B873900898FE6 /* RemoteDataLoader.h */,
+				7FCA4A721A2B873900898FE6 /* RemoteDataLoader.m */,
 			);
 			path = BikeLviv;
 			sourceTree = "<group>";
@@ -203,6 +214,16 @@
 				7F18D6121A2A2E8900025DE0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FCA4A6A1A2B275A00898FE6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FCA4A6B1A2B27AB00898FE6 /* Model.xcdatamodeld */,
+				7FCA4A771A2B942B00898FE6 /* Place.h */,
+				7FCA4A781A2B942B00898FE6 /* Place.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		F3B3E5061211842BC1C0C9B0 /* Frameworks */ = {
@@ -350,11 +371,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F18D6001A2A2E8900025DE0 /* TableViewController.m in Sources */,
-				7FD89CCC1A2A59AC0065C6B1 /* APIClient.m in Sources */,
 				7F18D5FA1A2A2E8900025DE0 /* AppDelegate.m in Sources */,
+				7FCA4A731A2B873900898FE6 /* RemoteDataLoader.m in Sources */,
+				7FCA4A6D1A2B27AB00898FE6 /* Model.xcdatamodeld in Sources */,
 				7F18D5FD1A2A2E8900025DE0 /* MapViewController.m in Sources */,
 				7F18D5F71A2A2E8900025DE0 /* main.m in Sources */,
+				7FCA4A791A2B942B00898FE6 /* Place.m in Sources */,
 				7F27DF731A2A3ECA007711DD /* DirectionService.m in Sources */,
+				7FCA4A701A2B326800898FE6 /* APIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +593,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7FCA4A6B1A2B27AB00898FE6 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7FCA4A6C1A2B27AB00898FE6 /* Model.xcdatamodel */,
+			);
+			currentVersion = 7FCA4A6C1A2B27AB00898FE6 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7F18D5E91A2A2E8900025DE0 /* Project object */;
 }

@@ -9,7 +9,6 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 #import "MapViewController.h"
-#import "APIClient.h"
 
 @interface MapViewController ()
 
@@ -22,9 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [[APIClient sharedInstance] GETmodelWithName:@"routes" commpletionBlock:^(id responseObject, NSError *error) {
-        
-    }];
 }
 
 - (void)didReceiveMemoryWarning {

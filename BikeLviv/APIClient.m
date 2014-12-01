@@ -1,12 +1,10 @@
 //
-//  APIClient.m
+//  APISessionManager.m
 //  BikeLviv
 //
-//  Created by Ostap Horbach on 11/29/14.
+//  Created by Ostap Horbach on 11/30/14.
 //  Copyright (c) 2014 Ostap Horbach. All rights reserved.
 //
-
-#import <AFNetworking/AFHTTPRequestOperationManager.h>
 
 #import "APIClient.h"
 
@@ -14,36 +12,16 @@ NSString * const kAPIURL = @"https://bike-lviv.herokuapp.com/api/v1/";
 
 @implementation APIClient
 
-+ (instancetype)sharedInstance
++ (instancetype)sharedManager
 {
-    static dispatch_once_t once;
-    static id sharedInstance;
-    dispatch_once(&once, ^{
-        sharedInstance = [[self alloc] init];
+    static APIClient *_sharedManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedManager = [[APIClient alloc] initWithBaseURL:[NSURL URLWithString:kAPIURL]];
+        [_sharedManager setSecurityPolicy:[AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone]];
     });
-    return sharedInstance;
-}
-
-- (NSString *)pathForModelName:(NSString *)modelName
-{
-    NSAssert(modelName.length, @"Invalid model name");
-    return [NSString stringWithFormat:@"%@%@", kAPIURL, modelName];
-}
-
-- (void)GETmodelWithName:(NSString *)modelName commpletionBlock:(void (^)(id responseObject, NSError* error))block
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:[self pathForModelName:modelName] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        if (block) {
-            block(responseObject, nil);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        if (block) {
-            block(nil, error);
-        }
-    }];
+    
+    return _sharedManager;
 }
 
 @end

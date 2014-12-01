@@ -1,5 +1,5 @@
 //
-//  APISessionManager.h
+//  RemoteDataLoader.h
 //  BikeLviv
 //
 //  Created by Ostap Horbach on 11/30/14.
@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking/AFHTTPSessionManager.h>
 
-@interface APIClient : AFHTTPSessionManager
+@interface RemoteDataLoader : NSObject
 
-+ (instancetype)sharedManager;
++ (instancetype)sharedLoader;
+
+- (void)loadData;
 
 @end

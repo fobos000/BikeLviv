@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-v6-Jct" customClass="GMSMapView">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-v6-Jct" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -71,24 +71,68 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6ji-w9-p4G">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
-                                </variation>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="6Nx-DJ-Qtd" style="IBUITableViewCellStyleDefault" id="gEG-Dg-4af">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gEG-Dg-4af" id="BXe-Pf-vnY">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Nx-DJ-Qtd">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="png-6Q-xMc"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="FL6-6X-7Hm"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6ji-w9-p4G" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="EcY-Kf-6es"/>
+                            <constraint firstItem="6ji-w9-p4G" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" id="IOM-Jg-mT0">
+                                <variation key="heightClass=regular" constant="-49"/>
+                            </constraint>
+                            <constraint firstItem="6ji-w9-p4G" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="XRZ-Dg-rQt"/>
+                            <constraint firstItem="6ji-w9-p4G" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="YPL-OF-Uew"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="6ji-w9-p4G"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="EcY-Kf-6es"/>
+                                <exclude reference="IOM-Jg-mT0"/>
+                                <exclude reference="XRZ-Dg-rQt"/>
+                                <exclude reference="YPL-OF-Uew"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="6ji-w9-p4G"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="EcY-Kf-6es"/>
+                                <include reference="IOM-Jg-mT0"/>
+                                <include reference="XRZ-Dg-rQt"/>
+                                <include reference="YPL-OF-Uew"/>
+                            </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableView" destination="6ji-w9-p4G" id="lNs-6b-0ra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,8 +7,10 @@
 //
 
 #import <GoogleMaps/GoogleMaps.h>
+#import <MagicalRecord/MagicalRecord+Setup.h>
 
 #import "AppDelegate.h"
+#import "RemoteDataLoader.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +21,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [GMSServices provideAPIKey:@"AIzaSyAt3a_MqHCiSF7obyyhqhjD8y_tOn08e4Y"];
+    
+    [[RemoteDataLoader sharedLoader] loadData];
+    
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"Model"];
     
     return YES;
 }

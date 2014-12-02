@@ -12,6 +12,8 @@
 #import "APIClient.h"
 #import "Place.h"
 
+NSString * const RemoteDataLoaderDidFinishLoading = @"RemoteDataLoaderDidFinishLoading";
+
 @interface RemoteDataLoader ()
 
 @property (nonatomic, strong) APIClient *apiClient;
@@ -47,14 +49,14 @@
         
         if ([responseObject isKindOfClass:[NSArray class]]) {
             
-            NSManagedObjectContext *context = [NSManagedObjectContext defaultContext];
+            NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
             
             NSMutableArray *places = [@[] mutableCopy];
             [responseObject enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 NSError *error = nil;
                 Place *place = [MTLJSONAdapter modelOfClass:[Place class] fromJSONDictionary:obj error:&error];
                 
-                [MTLManagedObjectAdapter managedObjectFromModel:place
+                NSManagedObject *mobj = [MTLManagedObjectAdapter managedObjectFromModel:place
                                            insertingIntoContext:context
                                                           error:&error];
                 
@@ -66,6 +68,8 @@
                 NSLog(@"Unable to save context for %@", [Place managedObjectEntityName]);
             }
             
+            [[NSNotificationCenter defaultCenter] postNotificationName:RemoteDataLoaderDidFinishLoading
+                                                                object:self];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);

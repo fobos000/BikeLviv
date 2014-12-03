@@ -25,7 +25,4 @@
 @property (nonatomic, retain) NSDate * updatedAt;
 @property (nonatomic, retain) NSString * workTime;
 
-- (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)context;
-
-
 @end

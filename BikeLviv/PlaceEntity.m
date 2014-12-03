@@ -24,7 +24,7 @@
 @dynamic updatedAt;
 @dynamic workTime;
 
-- (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)context
++ (id)entityInManagedObjectContext:(NSManagedObjectContext *)context
 {
     return [NSEntityDescription entityForName:@"Place" inManagedObjectContext:context];
 }

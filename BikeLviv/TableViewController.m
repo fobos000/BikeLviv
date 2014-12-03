@@ -54,7 +54,8 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    cell.textLabel.text = self.places[indexPath.row][@"description"];
+    PlaceEntity *place = self.places[indexPath.row];
+    cell.textLabel.text = place.desc;
     
     return cell;
 }

@@ -7,6 +7,8 @@
 //
 
 #import "TableViewController.h"
+#import "RemoteDataLoader.h"
+#import "PlaceEntity.h"
 
 @interface TableViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -22,11 +24,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updatedPlaces)
+                                                 name:RemoteDataLoaderDidFinishLoading
+                                               object:nil];
+    
+    self.places = [PlaceEntity MR_findAll];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)updatedPlaces
+{
+    self.places = [PlaceEntity findAll];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
@@ -40,7 +54,8 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    cell.textLabel.text = self.places[indexPath.row][@"description"];
+    PlaceEntity *place = self.places[indexPath.row];
+    cell.textLabel.text = place.desc;
     
     return cell;
 }

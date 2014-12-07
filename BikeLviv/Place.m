@@ -75,7 +75,7 @@
     }];
 }
 
-+ (NSValueTransformer *)ceratedAtJSONTransformer {
++ (NSValueTransformer *)createdAtJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
         return [self.dateFormatter dateFromString:str];
     } reverseBlock:^(NSDate *date) {

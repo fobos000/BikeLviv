@@ -60,12 +60,28 @@ NSString *const DateFormat = @"yyyy-MM-dd";
         self.lastUpdate = [NSDate date];
         
         if ([responseObject isKindOfClass:[NSArray class]]) {
+            
+            NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+            
             NSMutableArray *places = [@[] mutableCopy];
             [responseObject enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 NSError *error = nil;
                 Place *place = [MTLJSONAdapter modelOfClass:[Place class] fromJSONDictionary:obj error:&error];
+                
+                NSManagedObject *mobj = [MTLManagedObjectAdapter managedObjectFromModel:place
+                                           insertingIntoContext:context
+                                                          error:&error];
+                
                 [places addObject:place];
             }];
+            
+            NSError *saveError;
+            if (![context save:&saveError]) {
+                NSLog(@"Unable to save context for %@", [Place managedObjectEntityName]);
+            }
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:RemoteDataLoaderDidFinishLoading
+                                                                object:self];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);

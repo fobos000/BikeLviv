@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const RemoteDataLoaderDidFinishLoading;
+
 @interface RemoteDataLoader : NSObject
 
 + (instancetype)sharedLoader;

@@ -35,6 +35,8 @@
 		7FCA4A731A2B873900898FE6 /* RemoteDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA4A721A2B873900898FE6 /* RemoteDataLoader.m */; };
 		7FCA4A791A2B942B00898FE6 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA4A781A2B942B00898FE6 /* Place.m */; };
 		B0F9F61FDC601CA1A8BFC74C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBE45E9CD1E2690D105D21F /* libPods.a */; };
+		F68A378A1A2DD2AB00355E9B /* PlaceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A37891A2DD2AB00355E9B /* PlaceEntity.m */; };
+		F68A378D1A2DD31900355E9B /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A378C1A2DD31900355E9B /* CoreDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,11 @@
 		7FCA4A781A2B942B00898FE6 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		81A5806B0A5231DC51A9F2AB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CFBE45E9CD1E2690D105D21F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F68A36D41A2C993C00355E9B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F68A37881A2DD2AB00355E9B /* PlaceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceEntity.h; sourceTree = "<group>"; };
+		F68A37891A2DD2AB00355E9B /* PlaceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceEntity.m; sourceTree = "<group>"; };
+		F68A378B1A2DD31900355E9B /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		F68A378C1A2DD31900355E9B /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +193,8 @@
 				7FCA4A6F1A2B326800898FE6 /* APIClient.m */,
 				7FCA4A711A2B873900898FE6 /* RemoteDataLoader.h */,
 				7FCA4A721A2B873900898FE6 /* RemoteDataLoader.m */,
+				F68A378B1A2DD31900355E9B /* CoreDataManager.h */,
+				F68A378C1A2DD31900355E9B /* CoreDataManager.m */,
 			);
 			path = BikeLviv;
 			sourceTree = "<group>";
@@ -195,6 +204,7 @@
 			children = (
 				7F18D5F51A2A2E8900025DE0 /* Info.plist */,
 				7F18D5F61A2A2E8900025DE0 /* main.m */,
+				F68A36D41A2C993C00355E9B /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -222,6 +232,8 @@
 				7FCA4A6B1A2B27AB00898FE6 /* Model.xcdatamodeld */,
 				7FCA4A771A2B942B00898FE6 /* Place.h */,
 				7FCA4A781A2B942B00898FE6 /* Place.m */,
+				F68A37881A2DD2AB00355E9B /* PlaceEntity.h */,
+				F68A37891A2DD2AB00355E9B /* PlaceEntity.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -374,6 +386,8 @@
 				7F18D5FA1A2A2E8900025DE0 /* AppDelegate.m in Sources */,
 				7FCA4A731A2B873900898FE6 /* RemoteDataLoader.m in Sources */,
 				7FCA4A6D1A2B27AB00898FE6 /* Model.xcdatamodeld in Sources */,
+				F68A378A1A2DD2AB00355E9B /* PlaceEntity.m in Sources */,
+				F68A378D1A2DD31900355E9B /* CoreDataManager.m in Sources */,
 				7F18D5FD1A2A2E8900025DE0 /* MapViewController.m in Sources */,
 				7F18D5F71A2A2E8900025DE0 /* main.m in Sources */,
 				7FCA4A791A2B942B00898FE6 /* Place.m in Sources */,
@@ -505,6 +519,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BikeLviv",
 				);
+				GCC_PREFIX_HEADER = BikeLviv/PrefixHeader.pch;
 				INFOPLIST_FILE = BikeLviv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -521,6 +536,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BikeLviv",
 				);
+				GCC_PREFIX_HEADER = BikeLviv/PrefixHeader.pch;
 				INFOPLIST_FILE = BikeLviv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";

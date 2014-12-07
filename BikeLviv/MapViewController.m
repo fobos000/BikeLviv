@@ -9,6 +9,8 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 #import "MapViewController.h"
+#import "RemoteDataLoader.h"
+#import "PlaceEntity.h"
 
 @interface MapViewController ()
 
@@ -22,6 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updatedPlaces)
+                                                 name:RemoteDataLoaderDidFinishLoading
+                                               object:nil];
+    
+    self.places = [PlaceEntity MR_findAll];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -39,6 +47,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)updatedPlaces
+{
+    self.places = [PlaceEntity MR_findAll];
+
+    for (PlaceEntity *place in self.places) {
+        GMSMarker *marker = [[GMSMarker alloc] init];
+        marker.position = CLLocationCoordinate2DMake(place.latitude.doubleValue, place.longitude.doubleValue);
+        marker.appearAnimation = kGMSMarkerAnimationPop;
+        marker.map = self.mapView;
+    }
 }
 
 @end

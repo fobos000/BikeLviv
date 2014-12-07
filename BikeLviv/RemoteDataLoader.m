@@ -12,6 +12,8 @@
 #import "APIClient.h"
 #import "Place.h"
 
+NSString *const DateFormat = @"yyyy-MM-dd";
+
 @interface RemoteDataLoader ()
 
 @property (nonatomic, strong) APIClient *apiClient;
@@ -34,11 +36,23 @@
     return _sharedLoader;
 }
 
+- (NSString *)dateAsString:(NSDate *)date
+{
+    NSString *dateAsString = nil;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = DateFormat;
+    dateAsString = [dateFormatter stringFromDate:date];
+    
+    
+    return dateAsString;
+}
+
 - (void)loadData
 {
     NSDictionary *parameters = nil;
     if (self.lastUpdate) {
-        parameters = @{@"lastUpdate" : self.lastUpdate};
+        parameters = @{@"afterDate" : [self dateAsString:self.lastUpdate]};
     }
     
     [self.apiClient GET:@"places" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {

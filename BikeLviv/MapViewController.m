@@ -13,6 +13,7 @@
 @interface MapViewController ()
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *pinDetailViewBottomSpaceConstraint;
 
 @end
 
@@ -21,6 +22,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.pinDetailViewBottomSpaceConstraint.constant = 0.0f;
+    [self.view setNeedsUpdateConstraints];
+    
+    [UIView animateWithDuration:0.25f animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

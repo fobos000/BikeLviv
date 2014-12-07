@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--First-->
@@ -13,48 +14,41 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="1" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-v6-Jct" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-v6-Jct" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZz-ZW-7bp">
+                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="M5o-Pa-Y25"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="NZz-ZW-7bp" secondAttribute="trailing" constant="-16" id="7O2-sd-uOE"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="NZz-ZW-7bp" secondAttribute="bottom" constant="-49" id="D14-oz-sKK"/>
                             <constraint firstAttribute="height" secondItem="NCI-v6-Jct" secondAttribute="height" id="WVX-6P-fK3"/>
-                            <constraint firstItem="NCI-v6-Jct" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="imw-Pr-p41">
-                                <variation key="heightClass=regular" constant="49"/>
-                            </constraint>
+                            <constraint firstItem="NCI-v6-Jct" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" constant="49" id="imw-Pr-p41"/>
+                            <constraint firstItem="NZz-ZW-7bp" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="jto-UE-l7l"/>
                             <constraint firstItem="NCI-v6-Jct" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="pRL-a4-MGy"/>
                             <constraint firstAttribute="width" secondItem="NCI-v6-Jct" secondAttribute="width" id="wsH-6e-67o"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="WVX-6P-fK3"/>
-                                <exclude reference="imw-Pr-p41"/>
-                                <exclude reference="pRL-a4-MGy"/>
-                                <exclude reference="wsH-6e-67o"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="constraints">
-                                <include reference="WVX-6P-fK3"/>
-                                <include reference="imw-Pr-p41"/>
-                                <include reference="pRL-a4-MGy"/>
-                                <include reference="wsH-6e-67o"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="mapView" destination="NCI-v6-Jct" id="b7c-zm-L1W"/>
+                        <outlet property="pinDetailViewBottomSpaceConstraint" destination="D14-oz-sKK" id="n8b-z8-ZMJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="723" y="-324"/>
+            <point key="canvasLocation" x="400" y="-307"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -65,11 +59,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6ji-w9-p4G">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6ji-w9-p4G">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="752"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="6Nx-DJ-Qtd" style="IBUITableViewCellStyleDefault" id="gEG-Dg-4af">
@@ -80,12 +74,9 @@
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Nx-DJ-Qtd">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -100,34 +91,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6ji-w9-p4G" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="EcY-Kf-6es"/>
-                            <constraint firstItem="6ji-w9-p4G" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" id="IOM-Jg-mT0">
-                                <variation key="heightClass=regular" constant="-49"/>
-                            </constraint>
+                            <constraint firstItem="6ji-w9-p4G" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" constant="-49" id="IOM-Jg-mT0"/>
                             <constraint firstItem="6ji-w9-p4G" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="XRZ-Dg-rQt"/>
                             <constraint firstItem="6ji-w9-p4G" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="YPL-OF-Uew"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="6ji-w9-p4G"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="EcY-Kf-6es"/>
-                                <exclude reference="IOM-Jg-mT0"/>
-                                <exclude reference="XRZ-Dg-rQt"/>
-                                <exclude reference="YPL-OF-Uew"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="subviews">
-                                <include reference="6ji-w9-p4G"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="EcY-Kf-6es"/>
-                                <include reference="IOM-Jg-mT0"/>
-                                <include reference="XRZ-Dg-rQt"/>
-                                <include reference="YPL-OF-Uew"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
@@ -136,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="400" y="340.80000000000001"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -162,4 +129,9 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

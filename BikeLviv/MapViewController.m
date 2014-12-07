@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *pinDetailViewBottomSpaceConstraint;
+@property (nonatomic, strong) NSArray *places;
 
 @end
 
@@ -25,11 +26,12 @@
     [super viewDidLoad];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(updatedPlaces)
+                                             selector:@selector(displayPlaces)
                                                  name:RemoteDataLoaderDidFinishLoading
                                                object:nil];
     
     self.places = [PlaceEntity MR_findAll];
+    [self displayPlaces];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -49,7 +51,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)updatedPlaces
+- (void)displayPlaces
 {
     self.places = [PlaceEntity MR_findAll];
 

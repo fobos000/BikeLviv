@@ -13,6 +13,7 @@
 #import "Place.h"
 
 NSString *const DateFormat = @"yyyy-MM-dd";
+NSString * const RemoteDataLoaderDidFinishLoading = @"RemoteDataLoaderDidFinishLoading";
 
 @interface RemoteDataLoader ()
 
@@ -80,8 +81,10 @@ NSString *const DateFormat = @"yyyy-MM-dd";
                 NSLog(@"Unable to save context for %@", [Place managedObjectEntityName]);
             }
             
-            [[NSNotificationCenter defaultCenter] postNotificationName:RemoteDataLoaderDidFinishLoading
-                                                                object:self];
+            if (places.count > 0) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:RemoteDataLoaderDidFinishLoading
+                                                                    object:self];
+            }
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);

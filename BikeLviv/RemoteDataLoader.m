@@ -69,21 +69,22 @@ NSString * const RemoteDataLoaderDidFinishLoading = @"RemoteDataLoaderDidFinishL
                 NSError *error = nil;
                 Place *place = [MTLJSONAdapter modelOfClass:[Place class] fromJSONDictionary:obj error:&error];
                 
-                NSManagedObject *mobj = [MTLManagedObjectAdapter managedObjectFromModel:place
+                [MTLManagedObjectAdapter managedObjectFromModel:place
                                            insertingIntoContext:context
                                                           error:&error];
                 
                 [places addObject:place];
             }];
             
-            NSError *saveError;
-            if (![context save:&saveError]) {
-                NSLog(@"Unable to save context for %@", [Place managedObjectEntityName]);
-            }
-            
-            if (places.count > 0) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:RemoteDataLoaderDidFinishLoading
-                                                                    object:self];
+            if (context.hasChanges) {
+                [context MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+                    if (success) {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:RemoteDataLoaderDidFinishLoading
+                                                                            object:self];
+                    } else {
+                        NSLog(@"Unable to save context for %@", [Place managedObjectEntityName]);
+                    }
+                }];
             }
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {

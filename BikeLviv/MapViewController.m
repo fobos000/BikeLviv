@@ -10,7 +10,7 @@
 
 #import "MapViewController.h"
 #import "RemoteDataLoader.h"
-#import "PlaceEntity.h"
+#import "PlaceProvider.h"
 
 @interface MapViewController ()
 
@@ -30,7 +30,6 @@
                                                  name:RemoteDataLoaderDidFinishLoading
                                                object:nil];
     
-    self.places = [PlaceEntity MR_findAll];
     [self displayPlaces];
 }
 
@@ -53,11 +52,17 @@
 
 - (void)displayPlaces
 {
-    self.places = [PlaceEntity MR_findAll];
+    PlaceProvider *placeProvider = [PlaceProvider sharedInstance];
+    placeProvider.placeTypes = [NSSet setWithObjects:@(PlaceTypeBicycleShop),
+                                @(PlaceTypeCafe),
+                                @(PlaceTypeSupermarket),
+                                @(PlaceTypeParking), nil];
+    
+    self.places = [PlaceProvider sharedInstance].selectedPlaces;
 
-    for (PlaceEntity *place in self.places) {
+    for (Place *place in self.places) {
         GMSMarker *marker = [[GMSMarker alloc] init];
-        marker.position = CLLocationCoordinate2DMake(place.latitude.doubleValue, place.longitude.doubleValue);
+        marker.position = CLLocationCoordinate2DMake(place.latitude, place.longitude);
         marker.appearAnimation = kGMSMarkerAnimationPop;
         marker.map = self.mapView;
     }

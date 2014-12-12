@@ -21,7 +21,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * phone;
 @property (nonatomic, retain) NSNumber * serverId;
-@property (nonatomic, retain) NSString * type;
+@property (nonatomic, retain) NSNumber * type;
 @property (nonatomic, retain) NSDate * updatedAt;
 @property (nonatomic, retain) NSString * workTime;
 

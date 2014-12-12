@@ -37,6 +37,7 @@
 		B0F9F61FDC601CA1A8BFC74C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBE45E9CD1E2690D105D21F /* libPods.a */; };
 		F68A378A1A2DD2AB00355E9B /* PlaceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A37891A2DD2AB00355E9B /* PlaceEntity.m */; };
 		F68A378D1A2DD31900355E9B /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A378C1A2DD31900355E9B /* CoreDataManager.m */; };
+		F6E6FBAE1A39DF6B00DE496C /* PlaceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E6FBAD1A39DF6B00DE496C /* PlaceProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		F68A37891A2DD2AB00355E9B /* PlaceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceEntity.m; sourceTree = "<group>"; };
 		F68A378B1A2DD31900355E9B /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		F68A378C1A2DD31900355E9B /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		F6E6FBAC1A39DF6B00DE496C /* PlaceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceProvider.h; sourceTree = "<group>"; };
+		F6E6FBAD1A39DF6B00DE496C /* PlaceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,8 @@
 				7FCA4A781A2B942B00898FE6 /* Place.m */,
 				F68A37881A2DD2AB00355E9B /* PlaceEntity.h */,
 				F68A37891A2DD2AB00355E9B /* PlaceEntity.m */,
+				F6E6FBAC1A39DF6B00DE496C /* PlaceProvider.h */,
+				F6E6FBAD1A39DF6B00DE496C /* PlaceProvider.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 			files = (
 				7F18D6001A2A2E8900025DE0 /* TableViewController.m in Sources */,
 				7F18D5FA1A2A2E8900025DE0 /* AppDelegate.m in Sources */,
+				F6E6FBAE1A39DF6B00DE496C /* PlaceProvider.m in Sources */,
 				7FCA4A731A2B873900898FE6 /* RemoteDataLoader.m in Sources */,
 				7FCA4A6D1A2B27AB00898FE6 /* Model.xcdatamodeld in Sources */,
 				F68A378A1A2DD2AB00355E9B /* PlaceEntity.m in Sources */,

@@ -14,7 +14,8 @@
 
 + (PlaceProvider *)sharedInstance;
 
-@property (nonatomic, strong) NSSet *placeTypes;
+@property (nonatomic, strong) NSSet *selectedPlaceTypes;
 @property (readonly) NSArray *selectedPlaces;
+@property (readonly) NSArray *placeTypes;
 
 @end

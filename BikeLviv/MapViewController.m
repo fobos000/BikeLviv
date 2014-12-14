@@ -43,6 +43,8 @@
     [UIView animateWithDuration:0.25f animations:^{
         [self.view layoutIfNeeded];
     }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +55,7 @@
 - (void)displayPlaces
 {
     PlaceProvider *placeProvider = [PlaceProvider sharedInstance];
-    placeProvider.placeTypes = [NSSet setWithObjects:@(PlaceTypeBicycleShop),
+    placeProvider.selectedPlaceTypes = [NSSet setWithObjects:@(PlaceTypeBicycleShop),
                                 @(PlaceTypeCafe),
                                 @(PlaceTypeSupermarket),
                                 @(PlaceTypeParking), nil];

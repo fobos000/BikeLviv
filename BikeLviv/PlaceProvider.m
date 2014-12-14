@@ -25,16 +25,16 @@
     return sharedInstance;
 }
 
-- (void)setPlaceTypes:(NSSet *)placeTypes
+- (void)setSelectedPlaceTypes:(NSSet *)placeTypes
 {
-    _placeTypes = placeTypes;
+    _selectedPlaceTypes = placeTypes;
 }
 
 - (NSArray *)selectedPlaces
 {
     NSMutableArray *selectedPlaces = [@[] mutableCopy];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type IN %@", [_placeTypes allObjects]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type IN %@", [_selectedPlaceTypes allObjects]];
     NSArray *selectedPlaceEntities = [PlaceEntity MR_findAllWithPredicate:predicate];
     
     for (PlaceEntity *placeEntity in selectedPlaceEntities) {
@@ -48,6 +48,14 @@
     }
     
     return [NSArray arrayWithArray:selectedPlaces];
+}
+
+- (NSArray *)placeTypes
+{
+    return @[NSLocalizedString(@"Bycicle Shops", nil),
+             NSLocalizedString(@"Cafes", nil),
+             NSLocalizedString(@"Supermarkets", nil),
+             NSLocalizedString(@"Parkings", nil)];
 }
 
 @end

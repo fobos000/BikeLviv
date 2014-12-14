@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FCVerticalMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-FCVerticalMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4CCD71A214BBD5C0D6EA126B</key>
+		<key>01ABBA5B97B64A9A6E31DF6B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89A890821AC2056FA8B87DC3</key>
+		<key>19737D6A8EF1C4B4BBE259AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>90B93D47AB0835F33F818582</key>
+		<key>706A83ADB58643B30E55D21F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ADA7146480C7276803107D53</key>
+		<key>732A310915265E6BB5620A58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A3842AB08A79D95372084959</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DB7164565DE0CBE988542702</key>
 		<dict>
 			<key>primary</key>
 			<true/>

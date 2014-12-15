@@ -6,16 +6,11 @@
 //  Copyright (c) 2014 Ostap Horbach. All rights reserved.
 //
 
-#import "MTLModel.h"
 #import <Mantle/MTLJSONAdapter.h>
 #import <Mantle/MTLManagedObjectAdapter.h>
 
-typedef enum : NSUInteger {
-    PlaceTypeBicycleShop,
-    PlaceTypeCafe,
-    PlaceTypeSupermarket,
-    PlaceTypeParking
-} PlaceType;
+#import "MTLModel.h"
+#import "PlaceType.h"
 
 @interface Place : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
@@ -25,7 +20,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, copy, readonly) NSString *phone;
 @property (nonatomic, copy, readonly) NSString *workTime;
-@property (nonatomic, readonly) PlaceType type;
+@property (nonatomic, readonly) PlaceTypeValue type;
 @property (nonatomic, copy, readonly) NSDate *createdAt;
 @property (nonatomic, copy, readonly) NSDate *updatedAt;
 @property (nonatomic, readonly) float latitude;

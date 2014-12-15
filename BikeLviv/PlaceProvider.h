@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 
 #import "Place.h"
+#import "PlaceType.h"
 
 @interface PlaceProvider : NSObject
 
 + (PlaceProvider *)sharedInstance;
 
-@property (nonatomic, strong) NSSet *selectedPlaceTypes;
+- (void)selectPlaceType:(PlaceType *)placeType;
+- (void)deselectPlaceType:(PlaceType *)placeType;
+
+@property (nonatomic, strong, readonly) NSSet *selectedPlaceTypes;
 @property (readonly) NSArray *selectedPlaces;
 @property (readonly) NSArray *placeTypes;
 

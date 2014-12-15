@@ -24,13 +24,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(displayPlaces)
-                                                 name:RemoteDataLoaderDidFinishLoading
-                                               object:nil];
     
-    [self displayPlaces];
+    [[PlaceProvider sharedInstance] addObserver:self
+                                     forKeyPath:NSStringFromSelector(@selector(selectedPlaceTypes))
+                                        options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                                        context:nil];
+    
+//    [self displayPlaces];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -52,14 +52,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    if ([keyPath isEqualToString:NSStringFromSelector(@selector(selectedPlaceTypes))]) {
+        [self displayPlaces];
+    }
+}
+
 - (void)displayPlaces
 {
-    PlaceProvider *placeProvider = [PlaceProvider sharedInstance];
-    placeProvider.selectedPlaceTypes = [NSSet setWithObjects:@(PlaceTypeBicycleShop),
-                                @(PlaceTypeCafe),
-                                @(PlaceTypeSupermarket),
-                                @(PlaceTypeParking), nil];
-    
     self.places = [PlaceProvider sharedInstance].selectedPlaces;
 
     for (Place *place in self.places) {

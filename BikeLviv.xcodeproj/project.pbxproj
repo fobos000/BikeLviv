@@ -36,6 +36,7 @@
 		7FCA4A731A2B873900898FE6 /* RemoteDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA4A721A2B873900898FE6 /* RemoteDataLoader.m */; };
 		7FCA4A791A2B942B00898FE6 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA4A781A2B942B00898FE6 /* Place.m */; };
 		B0F9F61FDC601CA1A8BFC74C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBE45E9CD1E2690D105D21F /* libPods.a */; };
+		F677DC3A1A3EEC5F004F490A /* PlaceType.m in Sources */ = {isa = PBXBuildFile; fileRef = F677DC391A3EEC5F004F490A /* PlaceType.m */; };
 		F68A378A1A2DD2AB00355E9B /* PlaceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A37891A2DD2AB00355E9B /* PlaceEntity.m */; };
 		F68A378D1A2DD31900355E9B /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A378C1A2DD31900355E9B /* CoreDataManager.m */; };
 		F6E6FBAE1A39DF6B00DE496C /* PlaceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E6FBAD1A39DF6B00DE496C /* PlaceProvider.m */; };
@@ -95,6 +96,8 @@
 		7FCA4A781A2B942B00898FE6 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		81A5806B0A5231DC51A9F2AB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CFBE45E9CD1E2690D105D21F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F677DC381A3EEC5F004F490A /* PlaceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceType.h; sourceTree = "<group>"; };
+		F677DC391A3EEC5F004F490A /* PlaceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceType.m; sourceTree = "<group>"; };
 		F68A36D41A2C993C00355E9B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F68A37881A2DD2AB00355E9B /* PlaceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceEntity.h; sourceTree = "<group>"; };
 		F68A37891A2DD2AB00355E9B /* PlaceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceEntity.m; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 				F68A37891A2DD2AB00355E9B /* PlaceEntity.m */,
 				F6E6FBAC1A39DF6B00DE496C /* PlaceProvider.h */,
 				F6E6FBAD1A39DF6B00DE496C /* PlaceProvider.m */,
+				F677DC381A3EEC5F004F490A /* PlaceType.h */,
+				F677DC391A3EEC5F004F490A /* PlaceType.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				7F52AAF61A3DBF8900A889D2 /* MainTabBarViewController.m in Sources */,
 				F68A378D1A2DD31900355E9B /* CoreDataManager.m in Sources */,
 				7F18D5FD1A2A2E8900025DE0 /* MapViewController.m in Sources */,
+				F677DC3A1A3EEC5F004F490A /* PlaceType.m in Sources */,
 				7F18D5F71A2A2E8900025DE0 /* main.m in Sources */,
 				7FCA4A791A2B942B00898FE6 /* Place.m in Sources */,
 				7F27DF731A2A3ECA007711DD /* DirectionService.m in Sources */,

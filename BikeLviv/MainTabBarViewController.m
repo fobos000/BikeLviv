@@ -24,11 +24,12 @@
     // Do any additional setup after loading the view.
     
     NSMutableArray *menuItems = [@[] mutableCopy];
-    for (NSString *placeTypeName in [PlaceProvider sharedInstance].placeTypes) {
-        FCVerticalMenuItem *menuItem = [[FCVerticalMenuItem alloc] initWithTitle:placeTypeName andIconImage:[UIImage imageNamed:@"settings-icon"]];
+    for (PlaceType *placeType in [PlaceProvider sharedInstance].placeTypes) {
+        FCVerticalMenuItem *menuItem = [[FCVerticalMenuItem alloc] initWithTitle:placeType.displayName
+                                                                    andIconImage:nil];
         
         menuItem.actionBlock = ^{
-            NSLog(@"test element 1");
+            [[PlaceProvider sharedInstance] selectPlaceType:placeType];
         };
         
         [menuItems addObject:menuItem];

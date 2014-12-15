@@ -11,6 +11,12 @@
 #import "PlaceProvider.h"
 #import "PlaceEntity.h"
 
+@interface PlaceProvider ()
+
+@property (nonatomic, strong) NSMutableSet *selectedPlaceTypesInternal;
+
+@end
+
 @implementation PlaceProvider
 
 + (PlaceProvider *)sharedInstance
@@ -25,16 +31,34 @@
     return sharedInstance;
 }
 
-- (void)setSelectedPlaceTypes:(NSSet *)placeTypes
+- (id)init
 {
-    _selectedPlaceTypes = placeTypes;
+    self = [super init];
+    if (self) {
+        _selectedPlaceTypesInternal = [NSMutableSet set];
+        _selectedPlaceTypes = [NSSet set];
+    }
+    return self;
+}
+
+- (void)selectPlaceType:(PlaceType *)placeType {
+    [_selectedPlaceTypesInternal addObject:placeType];
+    [self willChangeValueForKey:NSStringFromSelector(@selector(selectedPlaceTypes))];
+    _selectedPlaceTypes = [NSSet setWithSet:_selectedPlaceTypesInternal];
+    [self didChangeValueForKey:NSStringFromSelector(@selector(selectedPlaceTypes))];
+}
+
+- (void)deselectPlaceType:(PlaceType *)placeType {
+    [_selectedPlaceTypesInternal removeObject:placeType];
+    _selectedPlaceTypes = [NSSet setWithSet:_selectedPlaceTypesInternal];
 }
 
 - (NSArray *)selectedPlaces
 {
     NSMutableArray *selectedPlaces = [@[] mutableCopy];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type IN %@", [_selectedPlaceTypes allObjects]];
+    NSArray *selectedTypeValues = [[_selectedPlaceTypes allObjects] valueForKey:@"value"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type IN %@", selectedTypeValues];
     NSArray *selectedPlaceEntities = [PlaceEntity MR_findAllWithPredicate:predicate];
     
     for (PlaceEntity *placeEntity in selectedPlaceEntities) {
@@ -52,10 +76,10 @@
 
 - (NSArray *)placeTypes
 {
-    return @[NSLocalizedString(@"Bycicle Shops", nil),
-             NSLocalizedString(@"Cafes", nil),
-             NSLocalizedString(@"Supermarkets", nil),
-             NSLocalizedString(@"Parkings", nil)];
+    return @[PlaceTypeCreate(NSLocalizedString(@"Bycicle Shops", nil), nil, PlaceTypeBicycleShop),
+             PlaceTypeCreate(NSLocalizedString(@"Cafes", nil), nil, PlaceTypeCafe),
+             PlaceTypeCreate(NSLocalizedString(@"Supermarkets", nil), nil, PlaceTypeSupermarket),
+             PlaceTypeCreate(NSLocalizedString(@"Parkings", nil), nil, PlaceTypeParking)];
 }
 
 @end

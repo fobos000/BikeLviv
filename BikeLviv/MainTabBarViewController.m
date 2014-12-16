@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Ostap Horbach. All rights reserved.
 //
 
-#import <FCVerticalMenu.h>
+#import "BikeVerticalMenu.h"
 
 #import "MainTabBarViewController.h"
 #import "PlaceProvider.h"
@@ -35,7 +35,7 @@
         [menuItems addObject:menuItem];
     }
     
-    self.verticalMenu = [[FCVerticalMenu alloc] initWithItems:menuItems];
+    self.verticalMenu = [[BikeVerticalMenu alloc] initWithItems:menuItems];
     self.verticalMenu.appearsBehindNavigationBar = YES;
 }
 

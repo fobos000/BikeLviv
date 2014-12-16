@@ -30,7 +30,6 @@
                                         options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
                                         context:nil];
     
-//    [self displayPlaces];
 }
 
 - (void)viewDidAppear:(BOOL)animated

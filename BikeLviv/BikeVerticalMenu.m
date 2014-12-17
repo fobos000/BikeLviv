@@ -7,6 +7,7 @@
 //
 
 #import "BikeVerticalMenu.h"
+#import "BikeVerticalMenuItemCollectionViewCell.h"
 
 @implementation BikeVerticalMenu
 
@@ -15,6 +16,10 @@
     self = [super init];
     if (self) {
         self.font = [UIFont fontWithName:@"Helvetica-Light" size:10];
+        [self.menuCollection registerClass:[BikeVerticalMenuItemCollectionViewCell class]
+                forCellWithReuseIdentifier:@"menuItem"];
+        self.menuCollection.allowsMultipleSelection = YES;
+        self.closeOnSelection = NO;
     }
     return self;
 }
@@ -35,6 +40,40 @@
                                                minimumInteritemSpacing,
                                                minimumInteritemSpacing);
     [flowLayout invalidateLayout];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    BikeVerticalMenuItemCollectionViewCell *cell = (BikeVerticalMenuItemCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"menuItem" forIndexPath:indexPath];
+    
+    cell.theMenuItem = self.items[indexPath.row];
+    
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    BikeVerticalMenuItemCollectionViewCell *cell = (BikeVerticalMenuItemCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    if (cell.theMenuItem.selectionBlock) {
+        cell.theMenuItem.selectionBlock(YES);
+    }
+    
+    if (self.closeOnSelection) {
+        self.bounce = NO;
+        [self dismissWithCompletionBlock:^{
+            self.bounce = YES;
+        }];
+    }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    BikeVerticalMenuItemCollectionViewCell *cell = (BikeVerticalMenuItemCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    if (cell.theMenuItem.selectionBlock) {
+        cell.theMenuItem.selectionBlock(NO);
+    }
 }
 
 @end

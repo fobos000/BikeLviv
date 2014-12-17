@@ -38,6 +38,8 @@
 		B0F9F61FDC601CA1A8BFC74C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBE45E9CD1E2690D105D21F /* libPods.a */; };
 		F677DC3A1A3EEC5F004F490A /* PlaceType.m in Sources */ = {isa = PBXBuildFile; fileRef = F677DC391A3EEC5F004F490A /* PlaceType.m */; };
 		F677DC4B1A4043C4004F490A /* BikeVerticalMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F677DC4A1A4043C4004F490A /* BikeVerticalMenu.m */; };
+		F677DC751A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F677DC741A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.m */; };
+		F677DC781A41FBB6004F490A /* BikeVerticalMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F677DC771A41FBB6004F490A /* BikeVerticalMenuItem.m */; };
 		F68A378A1A2DD2AB00355E9B /* PlaceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A37891A2DD2AB00355E9B /* PlaceEntity.m */; };
 		F68A378D1A2DD31900355E9B /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A378C1A2DD31900355E9B /* CoreDataManager.m */; };
 		F6E6FBAE1A39DF6B00DE496C /* PlaceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E6FBAD1A39DF6B00DE496C /* PlaceProvider.m */; };
@@ -101,6 +103,10 @@
 		F677DC391A3EEC5F004F490A /* PlaceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceType.m; sourceTree = "<group>"; };
 		F677DC491A4043C4004F490A /* BikeVerticalMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BikeVerticalMenu.h; sourceTree = "<group>"; };
 		F677DC4A1A4043C4004F490A /* BikeVerticalMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeVerticalMenu.m; sourceTree = "<group>"; };
+		F677DC731A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BikeVerticalMenuItemCollectionViewCell.h; sourceTree = "<group>"; };
+		F677DC741A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeVerticalMenuItemCollectionViewCell.m; sourceTree = "<group>"; };
+		F677DC761A41FBB6004F490A /* BikeVerticalMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BikeVerticalMenuItem.h; sourceTree = "<group>"; };
+		F677DC771A41FBB6004F490A /* BikeVerticalMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeVerticalMenuItem.m; sourceTree = "<group>"; };
 		F68A36D41A2C993C00355E9B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F68A37881A2DD2AB00355E9B /* PlaceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceEntity.h; sourceTree = "<group>"; };
 		F68A37891A2DD2AB00355E9B /* PlaceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceEntity.m; sourceTree = "<group>"; };
@@ -270,6 +276,10 @@
 			children = (
 				F677DC491A4043C4004F490A /* BikeVerticalMenu.h */,
 				F677DC4A1A4043C4004F490A /* BikeVerticalMenu.m */,
+				F677DC731A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.h */,
+				F677DC741A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.m */,
+				F677DC761A41FBB6004F490A /* BikeVerticalMenuItem.h */,
+				F677DC771A41FBB6004F490A /* BikeVerticalMenuItem.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -413,6 +423,7 @@
 				7F18D6001A2A2E8900025DE0 /* TableViewController.m in Sources */,
 				7F18D5FA1A2A2E8900025DE0 /* AppDelegate.m in Sources */,
 				F6E6FBAE1A39DF6B00DE496C /* PlaceProvider.m in Sources */,
+				F677DC751A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.m in Sources */,
 				7FCA4A731A2B873900898FE6 /* RemoteDataLoader.m in Sources */,
 				7FCA4A6D1A2B27AB00898FE6 /* Model.xcdatamodeld in Sources */,
 				F68A378A1A2DD2AB00355E9B /* PlaceEntity.m in Sources */,
@@ -423,6 +434,7 @@
 				7F18D5F71A2A2E8900025DE0 /* main.m in Sources */,
 				F677DC4B1A4043C4004F490A /* BikeVerticalMenu.m in Sources */,
 				7FCA4A791A2B942B00898FE6 /* Place.m in Sources */,
+				F677DC781A41FBB6004F490A /* BikeVerticalMenuItem.m in Sources */,
 				7F27DF731A2A3ECA007711DD /* DirectionService.m in Sources */,
 				7FCA4A701A2B326800898FE6 /* APIClient.m in Sources */,
 			);

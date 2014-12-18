@@ -30,6 +30,17 @@
                                         options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
                                         context:nil];
     
+    [self.mapView addObserver:self
+                   forKeyPath:NSStringFromSelector(@selector(myLocation))
+                      options:0
+                      context:nil];
+    
+    // Hack to enable users location on iOS 8
+    [[CLLocationManager new] requestWhenInUseAuthorization];
+    
+    // Enable users location
+    self.mapView.myLocationEnabled = YES;
+    
     // Set map to initial position
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:49.841945
                                                             longitude:24.031713
@@ -41,12 +52,12 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    self.pinDetailViewBottomSpaceConstraint.constant = 0.0f;
-    [self.view setNeedsUpdateConstraints];
-    
-    [UIView animateWithDuration:0.25f animations:^{
-        [self.view layoutIfNeeded];
-    }];
+//    self.pinDetailViewBottomSpaceConstraint.constant = 0.0f;
+//    [self.view setNeedsUpdateConstraints];
+//    
+//    [UIView animateWithDuration:0.25f animations:^{
+//        [self.view layoutIfNeeded];
+//    }];
     
     
 }
@@ -63,6 +74,9 @@
     if ([keyPath isEqualToString:NSStringFromSelector(@selector(selectedPlaceTypes))]) {
         [self updateMarkers];
     }
+    if ([keyPath isEqualToString:NSStringFromSelector(@selector(myLocation))]) {
+        // my location updated, do something
+    }
 }
 
 - (NSMutableArray *)displayedMarkers {
@@ -74,7 +88,7 @@
 
 - (void)updateCameraToDisplayedMarkers
 {
-    if (!self.displayedMarkers) return;
+    if (self.displayedMarkers.count == 0) return;
     
     CLLocationCoordinate2D firstLocation = ((GMSMarker *)self.displayedMarkers.firstObject).position;
     GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:firstLocation

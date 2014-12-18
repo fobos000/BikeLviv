@@ -50,7 +50,9 @@
 
 - (void)deselectPlaceType:(PlaceType *)placeType {
     [_selectedPlaceTypesInternal removeObject:placeType];
+    [self willChangeValueForKey:NSStringFromSelector(@selector(selectedPlaceTypes))];
     _selectedPlaceTypes = [NSSet setWithSet:_selectedPlaceTypesInternal];
+    [self didChangeValueForKey:NSStringFromSelector(@selector(selectedPlaceTypes))];
 }
 
 - (NSArray *)selectedPlaces

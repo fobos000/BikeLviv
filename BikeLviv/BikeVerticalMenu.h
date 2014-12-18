@@ -7,6 +7,7 @@
 //
 
 #import "FCVerticalMenu.h"
+#import "BikeVerticalMenuItem.h"
 
 @interface BikeVerticalMenu : FCVerticalMenu
 

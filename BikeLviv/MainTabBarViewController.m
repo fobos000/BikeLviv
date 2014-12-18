@@ -25,11 +25,15 @@
     
     NSMutableArray *menuItems = [@[] mutableCopy];
     for (PlaceType *placeType in [PlaceProvider sharedInstance].placeTypes) {
-        FCVerticalMenuItem *menuItem = [[FCVerticalMenuItem alloc] initWithTitle:placeType.displayName
-                                                                    andIconImage:nil];
+        BikeVerticalMenuItem *menuItem = [[BikeVerticalMenuItem alloc] initWithTitle:placeType.displayName
+                                                                        andIconImage:nil];
         
-        menuItem.actionBlock = ^{
-            [[PlaceProvider sharedInstance] selectPlaceType:placeType];
+        menuItem.selectionBlock = ^(BOOL selected){
+            if (selected) {
+                [[PlaceProvider sharedInstance] selectPlaceType:placeType];
+            } else {
+                [[PlaceProvider sharedInstance] deselectPlaceType:placeType];
+            }
         };
         
         [menuItems addObject:menuItem];

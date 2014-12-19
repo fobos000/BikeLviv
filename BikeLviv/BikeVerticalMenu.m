@@ -16,6 +16,9 @@
     self = [super init];
     if (self) {
         self.font = [UIFont fontWithName:@"Helvetica-Light" size:10];
+        self.textColor = [UIColor darkGrayColor];
+        self.borderColor = [UIColor darkGrayColor];
+        
         [self.menuCollection registerClass:[BikeVerticalMenuItemCollectionViewCell class]
                 forCellWithReuseIdentifier:@"menuItem"];
         self.menuCollection.allowsMultipleSelection = YES;

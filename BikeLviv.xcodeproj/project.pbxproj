@@ -40,6 +40,8 @@
 		F677DC4B1A4043C4004F490A /* BikeVerticalMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F677DC4A1A4043C4004F490A /* BikeVerticalMenu.m */; };
 		F677DC751A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F677DC741A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.m */; };
 		F677DC781A41FBB6004F490A /* BikeVerticalMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F677DC771A41FBB6004F490A /* BikeVerticalMenuItem.m */; };
+		F677DC801A4455F8004F490A /* PlaceDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F677DC7F1A4455F8004F490A /* PlaceDetailView.xib */; };
+		F677DC851A445F9E004F490A /* MapDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F677DC841A445F9E004F490A /* MapDetailView.swift */; };
 		F68A378A1A2DD2AB00355E9B /* PlaceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A37891A2DD2AB00355E9B /* PlaceEntity.m */; };
 		F68A378D1A2DD31900355E9B /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A378C1A2DD31900355E9B /* CoreDataManager.m */; };
 		F6E6FBAE1A39DF6B00DE496C /* PlaceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E6FBAD1A39DF6B00DE496C /* PlaceProvider.m */; };
@@ -107,6 +109,9 @@
 		F677DC741A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeVerticalMenuItemCollectionViewCell.m; sourceTree = "<group>"; };
 		F677DC761A41FBB6004F490A /* BikeVerticalMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BikeVerticalMenuItem.h; sourceTree = "<group>"; };
 		F677DC771A41FBB6004F490A /* BikeVerticalMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeVerticalMenuItem.m; sourceTree = "<group>"; };
+		F677DC7F1A4455F8004F490A /* PlaceDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceDetailView.xib; sourceTree = "<group>"; };
+		F677DC811A445F17004F490A /* BikeLviv-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BikeLviv-Bridging-Header.h"; sourceTree = "<group>"; };
+		F677DC841A445F9E004F490A /* MapDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDetailView.swift; sourceTree = "<group>"; };
 		F68A36D41A2C993C00355E9B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F68A37881A2DD2AB00355E9B /* PlaceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceEntity.h; sourceTree = "<group>"; };
 		F68A37891A2DD2AB00355E9B /* PlaceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceEntity.m; sourceTree = "<group>"; };
@@ -204,7 +209,6 @@
 				7F18D5FF1A2A2E8900025DE0 /* TableViewController.m */,
 				7F27DF711A2A3ECA007711DD /* DirectionService.h */,
 				7F27DF721A2A3ECA007711DD /* DirectionService.m */,
-				7F18D6011A2A2E8900025DE0 /* Main.storyboard */,
 				7F18D6041A2A2E8900025DE0 /* Images.xcassets */,
 				7F18D6061A2A2E8900025DE0 /* LaunchScreen.xib */,
 				7F18D5F41A2A2E8900025DE0 /* Supporting Files */,
@@ -274,12 +278,16 @@
 		F677DC481A404389004F490A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7F18D6011A2A2E8900025DE0 /* Main.storyboard */,
 				F677DC491A4043C4004F490A /* BikeVerticalMenu.h */,
 				F677DC4A1A4043C4004F490A /* BikeVerticalMenu.m */,
 				F677DC731A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.h */,
 				F677DC741A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.m */,
 				F677DC761A41FBB6004F490A /* BikeVerticalMenuItem.h */,
 				F677DC771A41FBB6004F490A /* BikeVerticalMenuItem.m */,
+				F677DC7F1A4455F8004F490A /* PlaceDetailView.xib */,
+				F677DC811A445F17004F490A /* BikeLviv-Bridging-Header.h */,
+				F677DC841A445F9E004F490A /* MapDetailView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -369,6 +377,7 @@
 				7F18D6031A2A2E8900025DE0 /* Main.storyboard in Resources */,
 				7F18D6081A2A2E8900025DE0 /* LaunchScreen.xib in Resources */,
 				7F18D6051A2A2E8900025DE0 /* Images.xcassets in Resources */,
+				F677DC801A4455F8004F490A /* PlaceDetailView.xib in Resources */,
 				7F18D6201A2A31AF00025DE0 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +433,7 @@
 				7F18D5FA1A2A2E8900025DE0 /* AppDelegate.m in Sources */,
 				F6E6FBAE1A39DF6B00DE496C /* PlaceProvider.m in Sources */,
 				F677DC751A41F3B3004F490A /* BikeVerticalMenuItemCollectionViewCell.m in Sources */,
+				F677DC851A445F9E004F490A /* MapDetailView.swift in Sources */,
 				7FCA4A731A2B873900898FE6 /* RemoteDataLoader.m in Sources */,
 				7FCA4A6D1A2B27AB00898FE6 /* Model.xcdatamodeld in Sources */,
 				F68A378A1A2DD2AB00355E9B /* PlaceEntity.m in Sources */,
@@ -559,6 +569,7 @@
 			baseConfigurationReference = 81A5806B0A5231DC51A9F2AB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BikeLviv",
@@ -568,6 +579,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BikeLviv/BikeLviv-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -576,6 +589,7 @@
 			baseConfigurationReference = 6E8DAA68ADF87D3BB81A2DEE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BikeLviv",
@@ -585,6 +599,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BikeLviv/BikeLviv-Bridging-Header.h";
 			};
 			name = Release;
 		};

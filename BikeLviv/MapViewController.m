@@ -11,11 +11,13 @@
 #import "MapViewController.h"
 #import "RemoteDataLoader.h"
 #import "PlaceProvider.h"
+#import "BikeLviv-Swift.h"
 
-@interface MapViewController ()
+@interface MapViewController () <GMSMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *pinDetailViewBottomSpaceConstraint;
+@property (weak, nonatomic) IBOutlet MapDetailView *placeDetailView;
 @property (nonatomic, strong) NSMutableArray *displayedMarkers;
 
 @end
@@ -24,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mapView.delegate = self;
     
     [[PlaceProvider sharedInstance] addObserver:self
                                      forKeyPath:NSStringFromSelector(@selector(selectedPlaceTypes))
@@ -51,14 +55,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-//    self.pinDetailViewBottomSpaceConstraint.constant = 0.0f;
-//    [self.view setNeedsUpdateConstraints];
-//    
-//    [UIView animateWithDuration:0.25f animations:^{
-//        [self.view layoutIfNeeded];
-//    }];
-    
     
 }
 
@@ -156,6 +152,23 @@
     }
     
     return markerForPlace;
+}
+
+#pragma mark - GMSMapViewDelegate
+
+- (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
+{
+    Place *tappedPlace = marker.userData;
+    self.placeDetailView.nameLabel.text = tappedPlace.name;
+    
+    self.pinDetailViewBottomSpaceConstraint.constant = 0.0f;
+    [self.view setNeedsUpdateConstraints];
+
+    [UIView animateWithDuration:0.25f animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    
+    return YES;
 }
 
 @end

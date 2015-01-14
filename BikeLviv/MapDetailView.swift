@@ -12,12 +12,16 @@ class MapDetailView: UIView {
 
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionTextField: UITextView!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        var viewFromXib = NSBundle.mainBundle().loadNibNamed("PlaceDetailView", owner: self, options: nil).last as UIView;
-        self.addSubview(viewFromXib);
+        var viewFromXib = NSBundle.mainBundle().loadNibNamed("PlaceDetailView", owner: self, options: nil).last as UIView
+        self.addSubview(viewFromXib)
     }
 
+    @IBAction func routeTapped(sender: AnyObject) {
+        println("\(__FUNCTION__)")
+    }
 }

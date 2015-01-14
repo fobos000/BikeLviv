@@ -22,17 +22,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZz-ZW-7bp" customClass="MapDetailView" customModule="BikeLviv" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <rect key="frame" x="0.0" y="519" width="320" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="M5o-Pa-Y25"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="NZz-ZW-7bp" secondAttribute="trailing" constant="-16" id="7O2-sd-uOE"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="NZz-ZW-7bp" secondAttribute="bottom" constant="-49" id="D14-oz-sKK"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="NZz-ZW-7bp" secondAttribute="bottom" constant="-350" id="D14-oz-sKK"/>
+                            <constraint firstAttribute="height" secondItem="NZz-ZW-7bp" secondAttribute="height" constant="218" id="HZZ-KY-h1Y"/>
                             <constraint firstAttribute="height" secondItem="NCI-v6-Jct" secondAttribute="height" id="WVX-6P-fK3"/>
                             <constraint firstItem="NCI-v6-Jct" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" constant="49" id="imw-Pr-p41"/>
                             <constraint firstItem="NZz-ZW-7bp" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="jto-UE-l7l"/>

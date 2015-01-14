@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *pinDetailViewBottomSpaceConstraint;
 @property (weak, nonatomic) IBOutlet MapDetailView *placeDetailView;
+@property (nonatomic, strong) UIGestureRecognizer *swipeRecognizer;
 @property (nonatomic, strong) NSMutableArray *displayedMarkers;
 
 @end
@@ -156,10 +157,16 @@
 
 #pragma mark - GMSMapViewDelegate
 
-- (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
-{
+- (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker {
     Place *tappedPlace = marker.userData;
     self.placeDetailView.nameLabel.text = tappedPlace.name;
+    self.placeDetailView.descriptionTextField.text = tappedPlace.desc;
+    
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc]
+                                                 initWithTarget:self
+                                                 action:@selector(swipeDownDetailView)];
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.placeDetailView addGestureRecognizer:swipeRecognizer];
     
     self.pinDetailViewBottomSpaceConstraint.constant = 0.0f;
     [self.view setNeedsUpdateConstraints];
@@ -168,7 +175,29 @@
         [self.view layoutIfNeeded];
     }];
     
+    // Center selecter marker
+    
+    CGPoint pointForMarker = [self.mapView.projection pointForCoordinate:marker.position];
+    pointForMarker.y += CGRectGetHeight(self.mapView.bounds) / 4;
+    CLLocationCoordinate2D coordinate = [self.mapView.projection coordinateForPoint:pointForMarker];
+    
+    GMSCameraPosition *cameraPosition = [GMSCameraPosition cameraWithLatitude:coordinate.latitude
+                                                                    longitude:coordinate.longitude
+                                                                         zoom:self.mapView.camera.zoom];
+    [self.mapView animateToCameraPosition:cameraPosition];
+    
+    
     return YES;
+}
+
+- (void)swipeDownDetailView {
+    self.pinDetailViewBottomSpaceConstraint.constant = -CGRectGetHeight(self.placeDetailView.frame);
+    [self.view setNeedsUpdateConstraints];
+    
+    [UIView animateWithDuration:0.25f animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    [self.placeDetailView removeGestureRecognizer:[self.placeDetailView.gestureRecognizers firstObject]];
 }
 
 @end

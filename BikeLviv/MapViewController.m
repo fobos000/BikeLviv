@@ -12,6 +12,7 @@
 #import "RemoteDataLoader.h"
 #import "PlaceProvider.h"
 #import "BikeLviv-Swift.h"
+#import "DirectionService.h"
 
 @interface MapViewController () <GMSMapViewDelegate>
 
@@ -51,7 +52,6 @@
                                                             longitude:24.031713
                                                                  zoom:12];
     self.mapView.camera = camera;
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -73,6 +73,9 @@
     }
     if ([keyPath isEqualToString:NSStringFromSelector(@selector(myLocation))]) {
         // my location updated, do something
+        
+        _mapView.camera = [GMSCameraPosition cameraWithTarget:_mapView.myLocation.coordinate
+                                                         zoom:14];
     }
 }
 
@@ -155,12 +158,33 @@
     return markerForPlace;
 }
 
+- (void)setRouteWithPath:(GMSPath *)path {
+    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithPath:path];
+    GMSCameraPosition *position = [_mapView cameraForBounds:bounds insets:UIEdgeInsetsZero];
+    [_mapView animateToCameraPosition:position];
+    
+    GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
+    polyline.strokeWidth = 3;
+    polyline.map = _mapView;
+}
+
 #pragma mark - GMSMapViewDelegate
 
 - (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker {
     Place *tappedPlace = marker.userData;
     self.placeDetailView.nameLabel.text = tappedPlace.name;
     self.placeDetailView.descriptionTextField.text = tappedPlace.desc;
+    self.placeDetailView.routeTappedFunction = ^{
+        if (mapView.myLocation) {
+            CLLocationCoordinate2D destination = {tappedPlace.latitude, tappedPlace.longitude};
+            [DirectionService findDirectionForOrigin:mapView.myLocation.coordinate
+                                         destination:destination
+                                           withBlock:^(GMSPath *path) {
+                                               [self setRouteWithPath:path];
+                                           }];
+        }
+        
+    };
     
     UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc]
                                                  initWithTarget:self

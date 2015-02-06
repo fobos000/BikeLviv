@@ -10,11 +10,16 @@ import UIKit
 
 class MapDetailView: UIView {
 
+    var routeTappedFunction: (() -> ())?
+    var numberOfSeats: Int
+    
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionTextField: UITextView!
     
     required init(coder aDecoder: NSCoder) {
+        numberOfSeats = 0
+        
         super.init(coder: aDecoder)
         
         var viewFromXib = NSBundle.mainBundle().loadNibNamed("PlaceDetailView", owner: self, options: nil).last as UIView
@@ -22,6 +27,6 @@ class MapDetailView: UIView {
     }
 
     @IBAction func routeTapped(sender: AnyObject) {
-        println("\(__FUNCTION__)")
+        routeTappedFunction!();
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FF005701A84C28E006F6141 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF0056F1A84C28E006F6141 /* GoogleMaps.framework */; };
+		3FF005721A84C2A0006F6141 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FF005711A84C2A0006F6141 /* GoogleMaps.bundle */; };
 		7F18D5F71A2A2E8900025DE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F18D5F61A2A2E8900025DE0 /* main.m */; };
 		7F18D5FA1A2A2E8900025DE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F18D5F91A2A2E8900025DE0 /* AppDelegate.m */; };
 		7F18D5FD1A2A2E8900025DE0 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F18D5FC1A2A2E8900025DE0 /* MapViewController.m */; };
@@ -15,8 +17,6 @@
 		7F18D6051A2A2E8900025DE0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F18D6041A2A2E8900025DE0 /* Images.xcassets */; };
 		7F18D6081A2A2E8900025DE0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F18D6061A2A2E8900025DE0 /* LaunchScreen.xib */; };
 		7F18D6141A2A2E8900025DE0 /* BikeLvivTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F18D6131A2A2E8900025DE0 /* BikeLvivTests.m */; };
-		7F18D61E1A2A312B00025DE0 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F18D61D1A2A312B00025DE0 /* GoogleMaps.framework */; };
-		7F18D6201A2A31AF00025DE0 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F18D61F1A2A31AF00025DE0 /* GoogleMaps.bundle */; };
 		7F18D6221A2A31D200025DE0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F18D6211A2A31D200025DE0 /* AVFoundation.framework */; };
 		7F18D6241A2A31DD00025DE0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F18D6231A2A31DD00025DE0 /* CoreData.framework */; };
 		7F18D6261A2A31FE00025DE0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F18D6251A2A31FE00025DE0 /* CoreLocation.framework */; };
@@ -58,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FF0056F1A84C28E006F6141 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		3FF005711A84C2A0006F6141 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		6E8DAA68ADF87D3BB81A2DEE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7F18D5F11A2A2E8900025DE0 /* BikeLviv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeLviv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F18D5F51A2A2E8900025DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,8 +76,6 @@
 		7F18D60D1A2A2E8900025DE0 /* BikeLvivTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeLvivTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F18D6121A2A2E8900025DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F18D6131A2A2E8900025DE0 /* BikeLvivTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BikeLvivTests.m; sourceTree = "<group>"; };
-		7F18D61D1A2A312B00025DE0 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = BikeLviv/GoogleMaps.framework; sourceTree = "<group>"; };
-		7F18D61F1A2A31AF00025DE0 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = BikeLviv/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		7F18D6211A2A31D200025DE0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7F18D6231A2A31DD00025DE0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7F18D6251A2A31FE00025DE0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -134,11 +134,11 @@
 				7F18D62E1A2A322600025DE0 /* libc++.dylib in Frameworks */,
 				7F18D62C1A2A321900025DE0 /* ImageIO.framework in Frameworks */,
 				7F18D62A1A2A321000025DE0 /* GLKit.framework in Frameworks */,
+				3FF005701A84C28E006F6141 /* GoogleMaps.framework in Frameworks */,
 				7F18D6281A2A320700025DE0 /* CoreText.framework in Frameworks */,
 				7F18D6261A2A31FE00025DE0 /* CoreLocation.framework in Frameworks */,
 				7F18D6241A2A31DD00025DE0 /* CoreData.framework in Frameworks */,
 				7F18D6221A2A31D200025DE0 /* AVFoundation.framework in Frameworks */,
-				7F18D61E1A2A312B00025DE0 /* GoogleMaps.framework in Frameworks */,
 				B0F9F61FDC601CA1A8BFC74C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,8 +165,8 @@
 		7F18D5E81A2A2E8900025DE0 = {
 			isa = PBXGroup;
 			children = (
-				7F18D61F1A2A31AF00025DE0 /* GoogleMaps.bundle */,
-				7F18D61D1A2A312B00025DE0 /* GoogleMaps.framework */,
+				3FF005711A84C2A0006F6141 /* GoogleMaps.bundle */,
+				3FF0056F1A84C28E006F6141 /* GoogleMaps.framework */,
 				7F18D6371A2A326000025DE0 /* SystemConfiguration.framework */,
 				7F18D6351A2A325300025DE0 /* QuartzCore.framework */,
 				7F18D6331A2A324A00025DE0 /* OpenGLES.framework */,
@@ -378,7 +378,7 @@
 				7F18D6081A2A2E8900025DE0 /* LaunchScreen.xib in Resources */,
 				7F18D6051A2A2E8900025DE0 /* Images.xcassets in Resources */,
 				F677DC801A4455F8004F490A /* PlaceDetailView.xib in Resources */,
-				7F18D6201A2A31AF00025DE0 /* GoogleMaps.bundle in Resources */,
+				3FF005721A84C2A0006F6141 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +573,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BikeLviv",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = BikeLviv/PrefixHeader.pch;
 				INFOPLIST_FILE = BikeLviv/Info.plist;
@@ -593,6 +594,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BikeLviv",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = BikeLviv/PrefixHeader.pch;
 				INFOPLIST_FILE = BikeLviv/Info.plist;

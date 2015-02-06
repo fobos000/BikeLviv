@@ -78,7 +78,7 @@
 
 - (NSArray *)placeTypes
 {
-    return @[PlaceTypeCreate(NSLocalizedString(@"Bycicle Shops", nil), nil, PlaceTypeBicycleShop),
+    return @[PlaceTypeCreate(NSLocalizedString(@"Bicycle Shops", nil), nil, PlaceTypeBicycleShop),
              PlaceTypeCreate(NSLocalizedString(@"Cafes", nil), nil, PlaceTypeCafe),
              PlaceTypeCreate(NSLocalizedString(@"Supermarkets", nil), nil, PlaceTypeSupermarket),
              PlaceTypeCreate(NSLocalizedString(@"Parkings", nil), nil, PlaceTypeParking)];

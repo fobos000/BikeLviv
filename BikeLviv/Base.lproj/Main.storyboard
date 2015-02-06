@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KDq-Uk-D22">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KDq-Uk-D22">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Map-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="MapViewController" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZz-ZW-7bp" customClass="MapDetailView" customModule="BikeLviv" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="519" width="320" height="350"/>
+                                <rect key="frame" x="0.0" y="769" width="320" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -30,7 +30,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="NZz-ZW-7bp" secondAttribute="trailing" constant="-16" id="7O2-sd-uOE"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="NZz-ZW-7bp" secondAttribute="bottom" constant="-350" id="D14-oz-sKK"/>
-                            <constraint firstAttribute="height" secondItem="NZz-ZW-7bp" secondAttribute="height" constant="218" id="HZZ-KY-h1Y"/>
+                            <constraint firstAttribute="height" secondItem="NZz-ZW-7bp" secondAttribute="height" constant="468" id="HZZ-KY-h1Y"/>
                             <constraint firstAttribute="height" secondItem="NCI-v6-Jct" secondAttribute="height" id="WVX-6P-fK3"/>
                             <constraint firstItem="NCI-v6-Jct" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" constant="49" id="imw-Pr-p41"/>
                             <constraint firstItem="NZz-ZW-7bp" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="jto-UE-l7l"/>
@@ -38,7 +38,7 @@
                             <constraint firstAttribute="width" secondItem="NCI-v6-Jct" secondAttribute="width" id="wsH-6e-67o"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="mapView" destination="NCI-v6-Jct" id="b7c-zm-L1W"/>
                         <outlet property="pinDetailViewBottomSpaceConstraint" destination="D14-oz-sKK" id="n8b-z8-ZMJ"/>
@@ -49,7 +49,7 @@
             </objects>
             <point key="canvasLocation" x="400" y="-307"/>
         </scene>
-        <!--Second-->
+        <!--List-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="TableViewController" sceneMemberID="viewController">
@@ -95,7 +95,7 @@
                             <constraint firstItem="6ji-w9-p4G" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="YPL-OF-Uew"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="List" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="tableView" destination="6ji-w9-p4G" id="lNs-6b-0ra"/>
                     </connections>

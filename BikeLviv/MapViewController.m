@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet MapDetailView *placeDetailView;
 @property (nonatomic, strong) UIGestureRecognizer *swipeRecognizer;
 @property (nonatomic, strong) NSMutableArray *displayedMarkers;
+@property (nonatomic, strong) GMSPolyline *currentRoute;
 
 @end
 
@@ -103,24 +104,39 @@
 
 - (void)updateMarkers
 {
+//    NSArray *places = [PlaceProvider sharedInstance].selectedPlaces;
+//    NSArray *displayedPlaces = [self.displayedMarkers
+//                                valueForKey:NSStringFromSelector(@selector(userData))];
+//
+//    
+//    NSMutableSet *placeToDeleteSet = [NSMutableSet setWithArray:displayedPlaces];
+//    [placeToDeleteSet minusSet:[NSSet setWithArray:places]];
+//    
+//    for (Place *place in placeToDeleteSet) {
+//        GMSMarker *markerToDelete = [self findMarkerForPlace:place];
+//        markerToDelete.map = nil;
+//        [self.displayedMarkers removeObject:markerToDelete];
+//    }
+//    
+//    NSMutableSet *placeToDisplaySet = [NSMutableSet setWithArray:places];
+//    [placeToDisplaySet minusSet:[NSSet setWithArray:displayedPlaces]];
+//    
+//    for (Place *place in placeToDisplaySet) {
+//        GMSMarker *markerToDisplay = [self findOrCreateMarkerForPlace:place];
+//        markerToDisplay.map = self.mapView;
+//        [self.displayedMarkers addObject:markerToDisplay];
+//    }
+//    
+//    [self updateCameraToDisplayedMarkers];
+    
     NSArray *places = [PlaceProvider sharedInstance].selectedPlaces;
-    NSArray *displayedPlaces = [self.displayedMarkers
-                                valueForKey:NSStringFromSelector(@selector(userData))];
-
     
-    NSMutableSet *placeToDeleteSet = [NSMutableSet setWithArray:displayedPlaces];
-    [placeToDeleteSet minusSet:[NSSet setWithArray:places]];
-    
-    for (Place *place in placeToDeleteSet) {
-        GMSMarker *markerToDelete = [self findMarkerForPlace:place];
-        markerToDelete.map = nil;
-        [self.displayedMarkers removeObject:markerToDelete];
+    for (GMSMarker *marker in self.displayedMarkers) {
+        marker.map = nil;
     }
+    [self.displayedMarkers removeAllObjects];
     
-    NSMutableSet *placeToDisplaySet = [NSMutableSet setWithArray:places];
-    [placeToDisplaySet minusSet:[NSSet setWithArray:displayedPlaces]];
-    
-    for (Place *place in placeToDisplaySet) {
+    for (Place *place in places) {
         GMSMarker *markerToDisplay = [self findOrCreateMarkerForPlace:place];
         markerToDisplay.map = self.mapView;
         [self.displayedMarkers addObject:markerToDisplay];
@@ -159,13 +175,23 @@
 }
 
 - (void)setRouteWithPath:(GMSPath *)path {
+    CGFloat topInset = [UIApplication sharedApplication].statusBarFrame.size.height +
+    self.navigationController.navigationBar.frame.size.height;
+    CGFloat bottomInset = self.tabBarController.tabBar.frame.size.height;
+    UIEdgeInsets routeInsets = UIEdgeInsetsMake(topInset + 10, 0, bottomInset + 10, 0);
+    
     GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithPath:path];
-    GMSCameraPosition *position = [_mapView cameraForBounds:bounds insets:UIEdgeInsetsZero];
+    GMSCameraPosition *position = [_mapView cameraForBounds:bounds insets:routeInsets];
     [_mapView animateToCameraPosition:position];
     
+    // Remove previous route
+    _currentRoute.map = nil;
+    
+    // Add new route
     GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
     polyline.strokeWidth = 3;
     polyline.map = _mapView;
+    _currentRoute = polyline;
 }
 
 #pragma mark - GMSMapViewDelegate
@@ -181,6 +207,7 @@
                                          destination:destination
                                            withBlock:^(GMSPath *path) {
                                                [self setRouteWithPath:path];
+                                               [self swipeDownDetailView];
                                            }];
         }
         
@@ -210,6 +237,8 @@
                                                                          zoom:self.mapView.camera.zoom];
     [self.mapView animateToCameraPosition:cameraPosition];
     
+    // Remove previous route
+    _currentRoute.map = nil;
     
     return YES;
 }

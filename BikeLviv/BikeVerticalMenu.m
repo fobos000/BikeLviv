@@ -62,6 +62,13 @@
         cell.theMenuItem.selectionBlock(YES);
     }
     
+    NSMutableArray *selectedItems = collectionView.indexPathsForSelectedItems.mutableCopy;
+    [selectedItems removeObject:indexPath];
+    for (NSIndexPath *selectedPath in selectedItems) {
+        [collectionView deselectItemAtIndexPath:selectedPath animated:YES];
+        [self deselectItemAtIndexPath:indexPath];
+    }
+    
     if (self.closeOnSelection) {
         self.bounce = NO;
         [self dismissWithCompletionBlock:^{
@@ -70,13 +77,17 @@
     }
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    BikeVerticalMenuItemCollectionViewCell *cell = (BikeVerticalMenuItemCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+- (void)deselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    BikeVerticalMenuItemCollectionViewCell *cell = (BikeVerticalMenuItemCollectionViewCell*)[self.menuCollection cellForItemAtIndexPath:indexPath];
     
     if (cell.theMenuItem.selectionBlock) {
         cell.theMenuItem.selectionBlock(NO);
     }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self deselectItemAtIndexPath:indexPath];
 }
 
 @end

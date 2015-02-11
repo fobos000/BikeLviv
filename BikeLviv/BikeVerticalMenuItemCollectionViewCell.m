@@ -112,6 +112,11 @@
     [self setNeedsDisplay];
 }
 
+- (void)setSelected:(BOOL)selected {
+    [super setSelected:selected];
+    [self setNeedsDisplay];
+}
+
 
 /**
  *  Create and return an image tinted with a color

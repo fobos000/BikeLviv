@@ -55,6 +55,11 @@
     [self didChangeValueForKey:NSStringFromSelector(@selector(selectedPlaceTypes))];
 }
 
+- (void)selectDefaultPlaceType {
+    PlaceType *defaultPlaceType = self.placeTypes.firstObject;
+    [self selectPlaceType:defaultPlaceType];
+}
+
 - (NSArray *)selectedPlaces
 {
     NSMutableArray *selectedPlaces = [@[] mutableCopy];

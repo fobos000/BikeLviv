@@ -11,4 +11,6 @@
 
 @interface BikeVerticalMenu : FCVerticalMenu
 
+- (void)selectItemAtIndexPath:(NSIndexPath *)indexPath;
+
 @end

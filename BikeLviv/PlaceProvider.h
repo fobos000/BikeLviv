@@ -17,6 +17,7 @@
 
 - (void)selectPlaceType:(PlaceType *)placeType;
 - (void)deselectPlaceType:(PlaceType *)placeType;
+- (void)selectDefaultPlaceType;
 
 @property (nonatomic, strong, readonly) NSSet *selectedPlaceTypes;
 @property (readonly) NSArray *selectedPlaces;

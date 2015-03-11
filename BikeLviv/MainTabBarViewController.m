@@ -13,7 +13,7 @@
 
 @interface MainTabBarViewController ()
 
-@property (nonatomic, strong) FCVerticalMenu *verticalMenu;
+@property (nonatomic, strong) BikeVerticalMenu *verticalMenu;
 
 @end
 
@@ -41,6 +41,9 @@
     
     self.verticalMenu = [[BikeVerticalMenu alloc] initWithItems:menuItems];
     self.verticalMenu.appearsBehindNavigationBar = YES;
+    
+    // Select first place type
+    [self.verticalMenu selectItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 }
 
 - (void)didReceiveMemoryWarning {

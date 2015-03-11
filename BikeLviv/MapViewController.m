@@ -32,6 +32,12 @@
     
     self.mapView.delegate = self;
     
+    // Set map to initial position
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:49.841945
+                                                            longitude:24.031713
+                                                                 zoom:12];
+    self.mapView.camera = camera;
+    
     [[PlaceProvider sharedInstance] addObserver:self
                                      forKeyPath:NSStringFromSelector(@selector(selectedPlaceTypes))
                                         options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
@@ -47,17 +53,6 @@
     
     // Enable users location
     self.mapView.myLocationEnabled = YES;
-    
-    // Set map to initial position
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:49.841945
-                                                            longitude:24.031713
-                                                                 zoom:12];
-    self.mapView.camera = camera;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,12 +66,6 @@
                        context:(void *)context {
     if ([keyPath isEqualToString:NSStringFromSelector(@selector(selectedPlaceTypes))]) {
         [self updateMarkers];
-    }
-    if ([keyPath isEqualToString:NSStringFromSelector(@selector(myLocation))]) {
-        // my location updated, do something
-        
-        _mapView.camera = [GMSCameraPosition cameraWithTarget:_mapView.myLocation.coordinate
-                                                         zoom:14];
     }
 }
 

@@ -21,7 +21,7 @@
         
         [self.menuCollection registerClass:[BikeVerticalMenuItemCollectionViewCell class]
                 forCellWithReuseIdentifier:@"menuItem"];
-        self.menuCollection.allowsMultipleSelection = YES;
+        self.menuCollection.allowsMultipleSelection = NO;
         self.closeOnSelection = NO;
     }
     return self;
@@ -62,19 +62,18 @@
         cell.theMenuItem.selectionBlock(YES);
     }
     
-    NSMutableArray *selectedItems = collectionView.indexPathsForSelectedItems.mutableCopy;
-    [selectedItems removeObject:indexPath];
-    for (NSIndexPath *selectedPath in selectedItems) {
-        [collectionView deselectItemAtIndexPath:selectedPath animated:YES];
-        [self deselectItemAtIndexPath:indexPath];
-    }
-    
     if (self.closeOnSelection) {
         self.bounce = NO;
         [self dismissWithCompletionBlock:^{
             self.bounce = YES;
         }];
     }
+}
+
+- (void)selectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self.menuCollection selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+    BikeVerticalMenuItem *menuItem = self.items[indexPath.row];
+    menuItem.selectionBlock(YES);
 }
 
 - (void)deselectItemAtIndexPath:(NSIndexPath *)indexPath {
